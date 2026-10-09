@@ -50,5 +50,4 @@ class Journal
             _entries.Add(newEntry);
         }
     }
-
 }
