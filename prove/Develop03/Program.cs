@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
+    // I exceeded the requirements by having the program only hide words that haven't been hidden yet.
     static void Main(string[] args)
     {
         Scripture scripture = new Scripture("Proverbs", 3, 5, 6, "Trust in the Lord with all thine heart; and lean not unto thine own understanding.");
