@@ -6,7 +6,7 @@
         Person myPerson = new Person("Joe", "Mother", 56, 10000);
         Console.WriteLine(myPerson.GetPersonInfo());
 
-        Police myPolice = new Police("George", "Floyd", 34, 186, "Bazooka");
+        Police myPolice = new Police("George", "Washington", 34, 186, "Bazooka");
         Console.WriteLine(myPolice.GetPoliceInfo());
 
         Doctor myDoctor = new Doctor("Lil'", "Big Money", 5, 50, "Drugs");
