@@ -4,6 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+
+
+        DateTime endTime = DateTime.Now.AddSeconds(15);
+
+        while (DateTime.Now < endTime)
+        {
+            activity.RunCountDownMessage("Breath In", 5);
+            activity.RunCountDownMessage("Breath out", 10);
+        }
     }
 }
