@@ -11,16 +11,16 @@ class FlaggedString
 
     public string GetPrompt()
     {
-        
+        return _prompt;
     }
 
-    public string SetHasBeenUsed()
+    public void SetHasBeenUsed(bool value)
     {
-        
+        _hasBeenUsed = value;
     }
 
     public bool GetHasBeenUsed()
     {
-        
+        return _hasBeenUsed;
     }    
 }
