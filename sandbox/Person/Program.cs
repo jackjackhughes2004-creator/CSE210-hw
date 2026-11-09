@@ -1,16 +1,31 @@
 ﻿class Program
 {
+    static void DisplayPersonInformation(Person person)
+    {
+        if (person is Doctor d)
+        {
+            Console.WriteLine(d.GetDoctorInfo());
+        }
+        else if (person is Police p)
+        {
+            Console.WriteLine(p.GetPoliceInfo());
+        }
+        else
+        {
+            Console.WriteLine(person.GetPersonInfo());
+        }
+    }
     
     static void Main()
     {
         Person myPerson = new Person("Joe", "Mother", 56, 10000);
-        Console.WriteLine(myPerson.GetPersonInfo());
+        //Console.WriteLine(myPerson.GetPersonInfo());
 
         Police myPolice = new Police("George", "Washington", 34, 186, "Bazooka");
-        Console.WriteLine(myPolice.GetPoliceInfo());
+        //Console.WriteLine(myPolice.GetPoliceInfo());
 
         Doctor myDoctor = new Doctor("Lil'", "Big Money", 5, 50, "Drugs");
-        Console.WriteLine(myDoctor.GetDoctorInfo());
+        //Console.WriteLine(myDoctor.GetDoctorInfo());
 
         List<Person> myPeople = new List<Person>();
 
@@ -20,7 +35,11 @@
 
         foreach(Person person in myPeople)
         {
-            Console.WriteLine(person.GetPersonInfo());
+            DisplayPersonInformation(person);
+            // Console.WriteLine(person.GetPersonInfo());
+            // if (person is Doctor d)
+            // {
+            // }
         }
     }
 }

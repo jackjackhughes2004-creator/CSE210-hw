@@ -10,6 +10,6 @@ class Doctor : Person
 
     public string GetDoctorInfo()
     {
-        return $"Doctor: {GetPersonInfo()}\nTools: {_tools}\n";
+        return $"Doctor: {GetPersonInfo()}Tools: {_tools}\n";
     }
 }
