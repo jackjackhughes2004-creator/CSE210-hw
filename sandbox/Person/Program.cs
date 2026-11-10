@@ -2,23 +2,24 @@
 {
     static void DisplayPersonInformation(Person person)
     {
-        if (person is Doctor d)
-        {
-            Console.WriteLine(d.GetDoctorInfo());
-        }
-        else if (person is Police p)
-        {
-            Console.WriteLine(p.GetPoliceInfo());
-        }
-        else
-        {
+        // if (person is Doctor d)
+        // {
+        //     Console.WriteLine(d.GetDoctorInfo());
+        // }
+        // else if (person is Police p)
+        // {
+        //     Console.WriteLine(p.GetPoliceInfo());
+        // }
+        // else
+        // {
             Console.WriteLine(person.GetPersonInfo());
-        }
+            Console.WriteLine($"Salary: {person.GetSalary()}\n");
+        // }
     }
     
     static void Main()
     {
-        Person myPerson = new Person("Joe", "Mother", 56, 10000);
+        // Person myPerson = new Person("Joe", "Mother", 56, 10000);
         //Console.WriteLine(myPerson.GetPersonInfo());
 
         Police myPolice = new Police("George", "Washington", 34, 186, "Bazooka");
@@ -29,7 +30,7 @@
 
         List<Person> myPeople = new List<Person>();
 
-        myPeople.Add(myPerson);
+        // myPeople.Add(myPerson);
         myPeople.Add(myDoctor);
         myPeople.Add(myPolice);
 
