@@ -28,9 +28,11 @@
         Doctor myDoctor = new Doctor("Lil'", "Big Money", 5, 50, "Drugs");
         //Console.WriteLine(myDoctor.GetDoctorInfo());
 
+        Brokie myBrokie = new Brokie("Alex", "Hughes", 15, 300, false);
+
         List<Person> myPeople = new List<Person>();
 
-        // myPeople.Add(myPerson);
+        myPeople.Add(myBrokie);
         myPeople.Add(myDoctor);
         myPeople.Add(myPolice);
 

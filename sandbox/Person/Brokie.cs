@@ -10,7 +10,7 @@ class Brokie : Person
 
     public override string GetPersonInfo()
     {
-        return base.GetPersonInfo();
+        return $"Brokie: {base.GetPersonInfo()}Home Owner: {_homeOwner}";
     }
 
     public override double GetSalary()
