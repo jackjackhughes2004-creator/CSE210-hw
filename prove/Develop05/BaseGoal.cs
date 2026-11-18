@@ -17,32 +17,32 @@ abstract class BaseGoal
 
     public BaseGoal()
     {
-        GetGoalName();
-        GetGoalDescription();
-        GetGoalPoints();
+        SetGoalName();
+        SetGoalDescription();
+        SetGoalPoints();
         _goalIteration = 0;
         GoalCompletion();
     }
 
-    public void GetGoalName()
+    public void SetGoalName()
     {
         Console.WriteLine("");
         Console.Write("Enter the name of your goal: ");
         _goalName = Console.ReadLine();
     }
 
-    public string SetGoalName()
+    public string GetGoalName()
     {
         return _goalName;
     }
 
-    public void GetGoalDescription()
+    public void SetGoalDescription()
     {
         Console.Write("Enter the description of your goal: ");
         _goalDescription = Console.ReadLine();
     }
 
-    public void GetGoalPoints()
+    public void SetGoalPoints()
     {
         Console.Write("Enter the how many points your goal is worth: ");
         _goalPoints = int.Parse(Console.ReadLine());

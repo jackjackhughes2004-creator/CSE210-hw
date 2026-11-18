@@ -41,7 +41,7 @@ class Goals
         {
             GoalNumber = GoalNumber + 1;
             Console.Write($"{GoalNumber}.");
-            Console.WriteLine(goal.SetGoalName());
+            Console.WriteLine(goal.GetGoalName());
         }
         Console.WriteLine("");
     }
