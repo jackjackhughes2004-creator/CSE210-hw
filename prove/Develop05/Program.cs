@@ -51,7 +51,7 @@ class Program
                 break;
 
                 case 4:
-                    myGoals.LoadGoals();
+                    myGoals.DeleteGoal(myMenus);
                 break;
 
                 case 5:

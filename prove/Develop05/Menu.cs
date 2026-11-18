@@ -6,7 +6,7 @@ class Menu
         Console.WriteLine("1. Create New Goal");
         Console.WriteLine("2. List Goals");
         Console.WriteLine("3. Save Goals");
-        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("4. Delete Goal");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Quit");
         Console.Write("Select a choice from the menu: ");
@@ -41,6 +41,23 @@ class Menu
     public int RecordMenu(List<BaseGoal> myGoalsList)
     {
         Console.WriteLine("Which goal would you like to record an event for?");
+        Console.Write("Enter the goal number: ");
+        string input = Console.ReadLine();
+        
+        // Parse the input and check if it's a valid number and within the list's range (1-indexed)
+        if (int.TryParse(input, out int choice))
+        {
+            if (choice >= 1 && choice <= myGoalsList.Count)
+            {
+            return choice;
+            }
+        }
+        return 0;
+    }
+
+    public int DeletionMenu(List<BaseGoal> myGoalsList)
+    {
+        Console.WriteLine("Which goal would you like to delete?");
         Console.Write("Enter the goal number: ");
         string input = Console.ReadLine();
         

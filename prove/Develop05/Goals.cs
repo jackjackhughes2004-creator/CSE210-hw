@@ -135,4 +135,16 @@ class Goals
         Console.WriteLine($"You have {_pointTotal} points");
     }
 
+    public void DeleteGoal(Menu myMenus)
+    {
+        // Lists just the names with their corresponding numbers for better readibility
+        ListGoalNames();
+                
+        // Displays the menu for the user to choose which goal to delete.
+        int goalChoice = myMenus.DeletionMenu(_myGoalsList);
+        
+        // Removes the goal from the list and saves changes to the Goals.txt file.
+        _myGoalsList.RemoveAt(goalChoice - 1);
+        SaveGoals();
+    }
 }
