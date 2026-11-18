@@ -13,14 +13,14 @@ class Program
 
         // I exceeded requirements by adding a way to get the user's name which
         // is used throughout the rest of the program and saved for future refrence.
-        if (System.IO.File.Exists(nameFile))
+        if (File.Exists(nameFile))
         {
-            name = System.IO.File.ReadAllText(nameFile).Trim();
+            name = File.ReadAllText(nameFile).Trim();
         }
         else
         {
             name = myMenu.GetName();
-            System.IO.File.WriteAllText(nameFile, name);
+            File.WriteAllText(nameFile, name);
         }
 
         Console.WriteLine($"Welcome to your Journal Program {name}!");

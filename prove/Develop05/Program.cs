@@ -12,7 +12,6 @@ class Program
         while (choice != 6)
         {   
             myGoals.DisplayPointTotal();
-
             choice = myMenus.MainMenu();
             switch(choice)
             {
@@ -46,9 +45,11 @@ class Program
                 break;
 
                 case 3:
+                    myGoals.SaveGoals();
                 break;
 
                 case 4:
+                    myGoals.LoadGoals();
                 break;
 
                 case 5:

@@ -1,4 +1,4 @@
-abstract class BaseGoal
+class BaseGoal
 {
     private string _goalName;
     private string _goalDescription;
@@ -67,8 +67,8 @@ abstract class BaseGoal
         return $"{_goalName} [{_goalComplete}]: {_goalPoints} Points\n({_goalDescription})";
     }
 
-    // public abstract int SavingFormat()
-    // {
-        
-    // }
+    public virtual string SavingFormat()
+    {
+        return $"{_goalName}#{_goalDescription}#{_goalPoints}#{_goalIteration}#{_goalComplete}";
+    }
 }

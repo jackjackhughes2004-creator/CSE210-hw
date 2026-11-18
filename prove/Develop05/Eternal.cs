@@ -1,7 +1,7 @@
 class Eternal : BaseGoal
 {
 
-    public Eternal(string goalName, string goalDescription, int goalPoints, int goalIteration, string goalComplete, int targetAmount, int bonusPoints)
+    public Eternal(string goalName, string goalDescription, int goalPoints, int goalIteration, string goalComplete)
     : base (goalName, goalDescription, goalPoints, goalIteration, goalComplete)
     {
     }
@@ -19,6 +19,6 @@ class Eternal : BaseGoal
 
     public override string DisplayFormat()
     {
-        return $" Etneral: {base.DisplayFormat()} Amount Completed: {_goalIteration}";
+        return $" Eternal: {base.DisplayFormat()} Amount Completed: {_goalIteration}";
     }
 }

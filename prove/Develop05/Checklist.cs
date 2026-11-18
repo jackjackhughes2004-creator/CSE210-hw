@@ -62,4 +62,9 @@ class Checklist : BaseGoal
     {
         return $" Checklist: {base.DisplayFormat()}\nProgress: {_goalIteration}/{_targetAmount} ({_bonusPoints} Bonus Points on Completion)";
     }
+
+    public override string SavingFormat()
+    {
+        return $"{base.SavingFormat()}#{_targetAmount}#{_goalIteration}";
+    }
 }
