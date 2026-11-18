@@ -44,8 +44,18 @@ class BaseGoal
 
     public void SetGoalPoints()
     {
-        Console.Write("Enter the how many points your goal is worth: ");
-        _goalPoints = int.Parse(Console.ReadLine());
+        bool allowExit = false;
+        while (allowExit != true)
+        {    
+            Console.Write("Enter the how many points your goal is worth: ");
+            if (int.TryParse(Console.ReadLine(), out int goalPoints) && goalPoints >= 0)
+            {
+                _goalPoints = goalPoints;
+                allowExit = true;
+            }
+            else
+                Console.WriteLine("Unauthorized Value, Please Enter A Positive Number");
+        }
     }
 
     public virtual int RecordEvent()

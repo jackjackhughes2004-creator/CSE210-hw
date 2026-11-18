@@ -8,6 +8,8 @@ class Program
         Menu myMenus = new Menu();
         Goals myGoals = new Goals();
         int choice = 0;
+
+        myGoals.LoadGoals();
         
         while (choice != 6)
         {   
@@ -61,6 +63,5 @@ class Program
                 break;
             }
         }
-
     }
 }

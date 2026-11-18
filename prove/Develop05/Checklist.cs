@@ -13,20 +13,40 @@ class Checklist : BaseGoal
     public Checklist()
     : base ()
     {
-        GetTargetAmount();
-        GetBonusPoints();
+        SetTargetAmount();
+        SetBonusPoints();
     }
 
-    public void GetTargetAmount()
+    public void SetTargetAmount()
     {
-        Console.Write("Enter how many times will you do this before you meet your goal: ");
-        _targetAmount = int.Parse(Console.ReadLine());
+        bool allowExit = false;
+        while (allowExit != true)
+        {    
+            Console.Write("Enter how many times will you do this before you meet your goal: ");
+            if (int.TryParse(Console.ReadLine(), out int targetAmount) && targetAmount > 0)
+            {
+                _targetAmount = targetAmount;
+                allowExit = true;
+            }
+            else
+                Console.WriteLine("Unauthorized Value, Please Enter A Positive Number");
+        }
     }
 
-    public void GetBonusPoints()
+    public void SetBonusPoints()
     {
-        Console.Write("Enter the how many bonus points will you get when you meet your goal: ");
-        _bonusPoints = int.Parse(Console.ReadLine());
+        bool allowExit = false;
+        while (allowExit != true)
+        {    
+            Console.Write("Enter the how many bonus points will you get when you meet your goal: ");
+            if (int.TryParse(Console.ReadLine(), out int bonusPoints) && bonusPoints >= 0)
+            {
+                _bonusPoints = bonusPoints;
+                allowExit = true;
+            }
+            else
+                Console.WriteLine("Unauthorized Value, Please Enter A Positive Number");
+        }
     }
     
     
