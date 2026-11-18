@@ -9,7 +9,7 @@ class Program
         Goals myGoals = new Goals();
         int choice = 0;
 
-        myGoals.LoadGoals();
+        myGoals.LoadAll();
         
         while (choice != 6)
         {   
@@ -47,7 +47,7 @@ class Program
                 break;
 
                 case 3:
-                    myGoals.SaveGoals();
+                    myGoals.SaveAll();
                 break;
 
                 case 4:
@@ -58,8 +58,12 @@ class Program
                     myGoals.RecordEvent(myMenus);
                 break;
 
+                case 6:
+                    Console.WriteLine("\nGoodbye!");
+                break;
+
                 default:
-                Console.WriteLine("Invalid choice. Please try again.");
+                Console.WriteLine("\nInvalid choice. Please try again.");
                 break;
             }
         }

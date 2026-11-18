@@ -63,7 +63,7 @@ class Goals
         Console.WriteLine("");
     }
     
-    public void SaveGoals()
+    public void SaveAll()
     {
         using (StreamWriter outputFile = new StreamWriter("Goals.txt"))
         {
@@ -72,9 +72,14 @@ class Goals
                 outputFile.WriteLine($"{goal}#{goal.SavingFormat()}");
             }
         }
+        
+        using (StreamWriter outputFile = new StreamWriter("points.txt"))
+        {
+            outputFile.WriteLine(_pointTotal);
+        }
     }
     
-    public void LoadGoals()
+    public void LoadAll()
     {
         if (File.Exists("Goals.txt") && new FileInfo("Goals.txt").Length > 0)
         {
@@ -106,6 +111,14 @@ class Goals
         }
         else
             Console.WriteLine("No Past Goals Found");
+        
+        if (File.Exists("points.txt") && new FileInfo("points.txt").Length > 0)
+        {
+            _pointTotal = int.Parse(File.ReadAllText("points.txt").Trim());
+            Console.WriteLine("Points Loaded Sucessfully");
+        }
+        else   
+            Console.WriteLine("No Past Points Found");
     }
     
     public void RecordEvent(Menu myMenus)
@@ -122,11 +135,13 @@ class Goals
         // Uses the recreated goal to update "Record Event"/"_goalIteration" and "Goal Completion"/"_goalComplete"
         int points = selectedGoal.RecordEvent();
         selectedGoal.GoalCompletion();
+        SaveAll();
         
         // Adds points to total, cleans up the screen, and displays a message saying how many points were added.
         _pointTotal += points;
         Console.Clear();
         Console.WriteLine($"Event recorded successfully! {points} points added!");
+
     }
     
     public void DisplayPointTotal()
@@ -145,6 +160,6 @@ class Goals
         
         // Removes the goal from the list and saves changes to the Goals.txt file.
         _myGoalsList.RemoveAt(goalChoice - 1);
-        SaveGoals();
+        SaveAll();
     }
 }

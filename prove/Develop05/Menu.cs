@@ -5,7 +5,7 @@ class Menu
         Console.WriteLine("");
         Console.WriteLine("1. Create New Goal");
         Console.WriteLine("2. List Goals");
-        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("3. Save");
         Console.WriteLine("4. Delete Goal");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Quit");
