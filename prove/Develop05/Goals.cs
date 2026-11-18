@@ -85,18 +85,18 @@ class Goals
 
                 if (parts[0] == "Simple")
                 {
-                    Simple LoadedSimpleGoal = new Simple(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5]);
-                    _myGoalsList.Add(LoadedSimpleGoal);
+                    Simple loadedSimpleGoal = new Simple(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5]);
+                    _myGoalsList.Add(loadedSimpleGoal);
                 }
                 else if (parts[0] == "Checklist")
                 {
-                    Checklist LoadedChecklistGoal = new Checklist(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5], int.Parse(parts[6]), int.Parse(parts[7]));
-                    _myGoalsList.Add(LoadedChecklistGoal);
+                    Checklist loadedChecklistGoal = new Checklist(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5], int.Parse(parts[6]), int.Parse(parts[7]));
+                    _myGoalsList.Add(loadedChecklistGoal);
                 }
                 else if (parts[0] == "Eternal")
                 {
-                    Eternal LoadedEternalGoal = new Eternal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5]);
-                    _myGoalsList.Add(LoadedEternalGoal);
+                    Eternal loadedEternalGoal = new Eternal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), parts[5]);
+                    _myGoalsList.Add(loadedEternalGoal);
                 }
                 else
                     Console.WriteLine("Error. No Goals Loaded.");
@@ -114,10 +114,10 @@ class Goals
         ListGoalNames();
 
         // Displays the menu for the user to choose which goal to record an event for.
-        int GoalChoice = myMenus.RecordMenu(_myGoalsList);
+        int goalChoice = myMenus.RecordMenu(_myGoalsList);
         
         // Recreates the goal so we can work with it
-        BaseGoal selectedGoal = _myGoalsList[GoalChoice - 1];
+        BaseGoal selectedGoal = _myGoalsList[goalChoice - 1];
         
         // Uses the recreated goal to update "Record Event"/"_goalIteration" and "Goal Completion"/"_goalComplete"
         int points = selectedGoal.RecordEvent();
