@@ -12,8 +12,17 @@ class Simple : BaseGoal
 
     }
 
+    public override int RecordEvent()
+    {
+        _goalIteration++;
+        if (_goalIteration == 1)
+            return base.RecordEvent();
+        else
+            return 0;
+    }
+
     public override string DisplayFormat()
     {
-        return $"{base.DisplayFormat()}";
+        return $" Simple: {base.DisplayFormat()}";
     }
 }

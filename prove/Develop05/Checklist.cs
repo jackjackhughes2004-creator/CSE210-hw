@@ -34,8 +34,7 @@ class Checklist : BaseGoal
     {
         if (_goalIteration >= _targetAmount)
         {
-            _goalIteration = _targetAmount;
-            return _goalComplete = "X";
+            return base.GoalCompletion();
         }
         else 
         {
@@ -45,14 +44,22 @@ class Checklist : BaseGoal
 
     public override int RecordEvent()
     {
-        if (_goalIteration > _targetAmount)
+        _goalIteration++;
+        if (_goalIteration < _targetAmount)
+        {   
+            _goalIteration--;
             return base.RecordEvent();
-        else
+        }
+        else if (_goalIteration == _targetAmount)
+        {
             return _bonusPoints;
+        }
+        else
+            return 0;
     }
 
     public override string DisplayFormat()
     {
-        return $"{base.DisplayFormat()} {_goalIteration}/{_targetAmount}";
+        return $" Checklist: {base.DisplayFormat()}\nProgress: {_goalIteration}/{_targetAmount} ({_bonusPoints} Bonus Points on Completion)";
     }
 }

@@ -2,6 +2,7 @@ class Goals
 {
 
     private int _pointTotal;
+    List<BaseGoal> myGoalsList = new List<BaseGoal>();
 
     public Goals(int pointTotal)
     {
@@ -13,7 +14,12 @@ class Goals
         _pointTotal = 0;
     }
     
-    public void ListGoals(List<BaseGoal> myGoalsList)
+    public void AddGoal(BaseGoal goal)
+    {
+        myGoalsList.Add(goal);
+    }
+
+    public void ListGoals()
     {
         Console.WriteLine("");
         int GoalNumber = 0;
@@ -56,9 +62,20 @@ class Goals
         
     }
     
-    public void RecordEvent(int points)
+    public void RecordEvent(Menu myMenus)
     {
+        // Lists just the names with their corresponding numbers for better readibility
+        ListGoalNames(myGoalsList);
+
+        // Displays the menu for the user to choose which goal to record an event for.
+        int GoalChoice = myMenus.RecordMenu(myGoalsList);
+        
+        BaseGoal selectedGoal = myGoalsList[GoalChoice - 1];
+        int points = selectedGoal.RecordEvent();
+        selectedGoal.GoalCompletion();
         _pointTotal += points;
+        Console.Clear();
+        Console.WriteLine($"Event recorded successfully! {points} points added!");
     }
     
     public void DisplayPointTotal()

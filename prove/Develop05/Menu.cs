@@ -25,8 +25,8 @@ class Menu
         Console.WriteLine("");
         Console.WriteLine("Which Goal Would You Like To Create?");
         Console.WriteLine("1. Simple Goal");
-        Console.WriteLine("2. Eternal Goal");
-        Console.WriteLine("3. Checklist Goal");
+        Console.WriteLine("2. Checklist Goal");
+        Console.WriteLine("3. Eternal Goal");
         Console.Write("Select a choice from the menu: ");
         
         string input = Console.ReadLine();

@@ -6,7 +6,6 @@ class Program
     static void Main(string[] args)
     {
         Menu myMenus = new Menu();
-        List<BaseGoal> myGoalsList = new List<BaseGoal>();
         Goals myGoals = new Goals();
         int choice = 0;
         
@@ -23,15 +22,17 @@ class Program
                     {
                         case 1:
                             Simple mySimpleGoal = new Simple();
-                            myGoalsList.Add(mySimpleGoal);
+                            myGoals.AddGoal(mySimpleGoal);
                         break;
 
                         case 2:
                             Checklist myChecklistGoal = new Checklist();
-                            myGoalsList.Add(myChecklistGoal);
+                            myGoals.AddGoal(myChecklistGoal);
                         break;
 
                         case 3:
+                            Eternal myEternalGoal = new Eternal();
+                            myGoals.AddGoal(myEternalGoal);
                         break;
 
                         default:
@@ -41,7 +42,7 @@ class Program
                 break;
 
                 case 2:
-                    myGoals.ListGoals(myGoalsList);
+                    myGoals.ListGoals();
                 break;
 
                 case 3:
@@ -51,13 +52,7 @@ class Program
                 break;
 
                 case 5:
-                    myGoals.ListGoalNames(myGoalsList);
-                    int GoalChoice = myMenus.RecordMenu(myGoalsList);
-                    BaseGoal selectedGoal = myGoalsList[GoalChoice - 1];
-                    int points = selectedGoal.RecordEvent();
-                    selectedGoal.GoalCompletion();
-                    myGoals.RecordEvent(points);
-                    Console.WriteLine("Event recorded successfully!");
+                    myGoals.RecordEvent(myMenus);
                 break;
 
                 default:

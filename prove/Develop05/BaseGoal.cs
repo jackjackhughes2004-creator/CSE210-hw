@@ -64,7 +64,7 @@ abstract class BaseGoal
 
     public virtual string DisplayFormat()
     {
-        return $" {_goalName} [{_goalComplete}]: {_goalPoints} Points\n({_goalDescription})";
+        return $"{_goalName} [{_goalComplete}]: {_goalPoints} Points\n({_goalDescription})";
     }
 
     // public abstract int SavingFormat()
